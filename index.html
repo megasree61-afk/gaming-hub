@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101011">
+  <meta name="description" content="Enter Gaming Hub: discover arcade favorites, find your next challenge, and play free mini-games.">
+  <title>Gaming Hub — Play Beyond</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="games.js" defer></script>
+</head>
+<body>
+  <div class="topline"><span class="live-dot"></span> YOUR NEXT MATCH STARTS HERE <span class="topline-divider">/</span> FREE TO PLAY, ALWAYS</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Gaming Hub home"><span class="brand-mark">G</span><span>GAMING<span class="brand-accent">HUB</span></span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#games">Games</a>
+      <a href="#arcade">Arcade</a>
+    </nav>
+    <a class="header-cta" href="#games">Explore games <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span class="eyebrow-line"></span> THE ULTIMATE PLAYGROUND</p>
+        <h1>PLAY<br>BEYOND<span class="hero-period">.</span></h1>
+        <p class="hero-description">Big energy. Quick matches. Zero downloads. Find your next favorite and jump straight into the action.</p>
+        <div class="hero-actions">
+          <a class="button button-red" href="#games">Find your game <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="#arcade">Play mini-games <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-stats" aria-label="Gaming Hub stats">
+          <div><strong>03</strong><span>ARCADE GAMES</span></div>
+          <span class="stat-divider"></span>
+          <div><strong>∞</strong><span>WAYS TO PLAY</span></div>
+          <span class="stat-divider"></span>
+          <div><strong>0</strong><span>DOWNLOADS</span></div>
+        </div>
+      </div>
+      <div class="hero-art" role="img" aria-label="Red neon gaming setup with an RGB gaming PC, a black controller, and an illuminated headset">
+        <img class="hero-photo" src="https://images.unsplash.com/photo-1775410631936-7de96322df0b?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" alt="">
+        <span class="hero-headset-inset" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1766052631066-8cdc780a4b5f?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="">
+        </span>
+        <div class="hero-art-caption"><span class="live-dot"></span> READY PLAYER ONE</div>
+      </div>
+      <span class="hero-index" aria-hidden="true">GH—001</span>
+    </section>
+
+    <section class="ticker" aria-label="Gaming Hub tagline">
+      <div class="ticker-track" aria-hidden="true">
+        <span>FIND YOUR GAME</span><b>✳</b><span>MAKE YOUR MOVE</span><b>✳</b><span>PLAY YOUR WAY</span><b>✳</b>
+        <span>FIND YOUR GAME</span><b>✳</b><span>MAKE YOUR MOVE</span><b>✳</b><span>PLAY YOUR WAY</span><b>✳</b>
+      </div>
+    </section>
+
+    <section class="games-section section-shell" id="games" aria-labelledby="games-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> THE LINEUP</p>
+          <h2 id="games-heading">PICK YOUR <span>POISON.</span></h2>
+        </div>
+        <p class="section-blurb">Choose a game, challenge a friend, or take on the house. The next move is yours.</p>
+      </div>
+
+      <div class="game-tools">
+        <div class="filters" id="category-filters" role="group" aria-label="Filter games by category">
+          <button class="filter-chip is-active" type="button" data-category="All" aria-pressed="true">All games</button>
+          <button class="filter-chip" type="button" data-category="Arcade" aria-pressed="false">Arcade</button>
+          <button class="filter-chip" type="button" data-category="Strategy" aria-pressed="false">Strategy</button>
+          <button class="filter-chip" type="button" data-category="Casual" aria-pressed="false">Casual</button>
+        </div>
+        <label class="search-field">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4 4"></path></svg>
+          <span class="sr-only">Search games</span>
+          <input id="game-search" type="search" placeholder="Search games..." autocomplete="off">
+          <kbd>⌕</kbd>
+        </label>
+      </div>
+
+      <p class="game-count" id="game-count" aria-live="polite"></p>
+      <div class="game-grid" id="game-grid"></div>
+    </section>
+
+    <section class="arcade-section" id="arcade" aria-labelledby="arcade-heading">
+      <div class="section-shell">
+        <div class="section-heading arcade-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> NO DOWNLOAD. ALL PLAY.</p>
+            <h2 id="arcade-heading">THE <span>ARCADE.</span></h2>
+          </div>
+          <p class="section-blurb">Three quick challenges. One browser. How far can you go?</p>
+        </div>
+
+        <div class="arcade-tabs" role="tablist" aria-label="Choose a mini-game">
+          <button class="arcade-tab is-active" type="button" role="tab" id="tab-ttt" aria-controls="game-ttt" aria-selected="true" data-game-tab="ttt"><span>01</span> Tic-Tac-Toe</button>
+          <button class="arcade-tab" type="button" role="tab" id="tab-rps" aria-controls="game-rps" aria-selected="false" data-game-tab="rps"><span>02</span> Rock Paper Scissors</button>
+          <button class="arcade-tab" type="button" role="tab" id="tab-guess" aria-controls="game-guess" aria-selected="false" data-game-tab="guess"><span>03</span> Number Guess</button>
+        </div>
+
+        <div class="mini-game-panel is-active" id="game-ttt" role="tabpanel" aria-labelledby="tab-ttt" data-game-panel="ttt">
+          <div class="mini-game-copy">
+            <p class="game-number">MINI-GAME / 01</p>
+            <h3>Three in a row.<br><span>Take the crown.</span></h3>
+            <p>Outsmart the other player. First to line up three marks wins.</p>
+            <div class="game-status" id="ttt-status" role="status" aria-live="polite">X's turn</div>
+            <button class="button button-outline" id="ttt-restart" type="button">Restart game <span aria-hidden="true">↻</span></button>
+          </div>
+          <div class="ttt-board" id="ttt-board" role="grid" aria-label="Tic-Tac-Toe board">
+            <button class="ttt-cell" type="button" role="gridcell" data-cell="0" aria-label="Row 1, column 1, empty"></button>
+            <button class="ttt-cell" type="button" role="gridcell" data-cell="1" aria-label="Row 1, column 2, empty"></button>
+            <button class="ttt-cell" type="button" role="gridcell" data-cell="2" aria-label="Row 1, column 3, empty"></button>
+            <button class="ttt-cell" type="button" role="gridcell" data-cell="3" aria-label="Row 2, column 1, empty"></button>
+            <button class="ttt-cell" type="button" role="gridcell" data-cell="4" aria-label="Row 2, column 2, empty"></button>
+            <button class="ttt-cell" type="button" role="gridcell" data-cell="5" aria-label="Row 2, column 3, empty"></button>
+            <button class="ttt-cell" type="button" role="gridcell" data-cell="6" aria-label="Row 3, column 1, empty"></button>
+            <button class="ttt-cell" type="button" role="gridcell" data-cell="7" aria-label="Row 3, column 2, empty"></button>
+            <button class="ttt-cell" type="button" role="gridcell" data-cell="8" aria-label="Row 3, column 3, empty"></button>
+          </div>
+        </div>
+
+        <div class="mini-game-panel" id="game-rps" role="tabpanel" aria-labelledby="tab-rps" data-game-panel="rps" hidden>
+          <div class="mini-game-copy">
+            <p class="game-number">MINI-GAME / 02</p>
+            <h3>Rock. Paper.<br><span>Big brain.</span></h3>
+            <p>Pick your move. The house picks one too. Best of luck.</p>
+            <div class="game-status" id="rps-status" role="status" aria-live="polite">Make your move.</div>
+            <div class="rps-score" aria-label="Score">
+              <span>You <strong id="rps-player-score">0</strong></span>
+              <span class="score-slash">/</span>
+              <span>House <strong id="rps-house-score">0</strong></span>
+            </div>
+            <button class="button button-outline" id="rps-restart" type="button">Restart game <span aria-hidden="true">↻</span></button>
+          </div>
+          <div class="rps-play-area">
+            <div class="rps-result" id="rps-result" aria-live="polite"><span>?</span><small>YOUR MOVE</small><span>?</span></div>
+            <div class="rps-choices" role="group" aria-label="Choose rock, paper, or scissors">
+              <button type="button" class="rps-choice" data-choice="rock" aria-label="Choose rock"><span aria-hidden="true">✊</span><small>ROCK</small></button>
+              <button type="button" class="rps-choice" data-choice="paper" aria-label="Choose paper"><span aria-hidden="true">✋</span><small>PAPER</small></button>
+              <button type="button" class="rps-choice" data-choice="scissors" aria-label="Choose scissors"><span aria-hidden="true">✌</span><small>SCISSORS</small></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="mini-game-panel" id="game-guess" role="tabpanel" aria-labelledby="tab-guess" data-game-panel="guess" hidden>
+          <div class="mini-game-copy">
+            <p class="game-number">MINI-GAME / 03</p>
+            <h3>Read the room.<br><span>Guess the number.</span></h3>
+            <p>There's a secret number from 1 to 100. Find it in as few tries as you can.</p>
+            <div class="game-status" id="guess-status" role="status" aria-live="polite">Your number is between 1 and 100.</div>
+            <p class="guess-attempts">ATTEMPTS <strong id="guess-attempt-count">0</strong></p>
+            <button class="button button-outline" id="guess-restart" type="button">New number <span aria-hidden="true">↻</span></button>
+          </div>
+          <form class="guess-form" id="guess-form">
+            <label for="guess-input">YOUR GUESS</label>
+            <div class="guess-entry">
+              <input id="guess-input" type="number" min="1" max="100" inputmode="numeric" placeholder="1 — 100" required>
+              <button class="button button-red" type="submit">Lock it in <span aria-hidden="true">→</span></button>
+            </div>
+            <div class="guess-history" id="guess-history" aria-label="Previous guesses"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-cta">
+      <div class="section-shell bottom-cta-inner">
+        <p class="eyebrow"><span class="eyebrow-line"></span> THE GAME IS NEVER OVER</p>
+        <h2>ONE MORE <span>ROUND?</span></h2>
+        <a class="button button-red" href="#arcade">Back to the arcade <span aria-hidden="true">↑</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#home"><span class="brand-mark">G</span><span>GAMING<span class="brand-accent">HUB</span></span></a>
+    <p>Built for the love of the game.</p>
+    <span class="footer-copy">© 2026 GAMING HUB · PLAY FAIR, HAVE FUN</span>
+  </footer>
+</body>
+</html>
